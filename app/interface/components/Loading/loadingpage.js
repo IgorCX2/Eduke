@@ -1,10 +1,10 @@
 import Image from 'next/image';
-const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
-};
+const imageLoader = ({ src, width, quality }) => {
+    return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+}
 export default function LoadingPage({imageLoader, describe}){
     return(
-        <div className="absolute top-0 left-0 h-full w-full bg-white flex flex-col items-center justify-center gap-8">
+        <div className="absolute top-0 left-0 h-screen z-40 w-full bg-white flex flex-col items-center justify-center gap-8">
             <div className='relative -ml-4'>
                 <Image
                     loader={imageLoader}
