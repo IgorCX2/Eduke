@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BtnGradient from '../interface/components/Botao/btngradient';
+import BtnGradient from '../Botao/btngradient';
 const imageLoader = ({ src, width, quality }) => {
     return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
 }

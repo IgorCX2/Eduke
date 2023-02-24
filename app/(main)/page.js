@@ -14,7 +14,7 @@ export default async function Home({ imageLoader }){
     const cookiesList = cookies()
     const hasCookie = await cookiesList.has('UserToken')
     if(hasCookie != false){
-        redirect('/login')
+        redirect('/aprender')
     }
     return(
         <main className="absolute top-0">

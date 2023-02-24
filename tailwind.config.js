@@ -14,10 +14,11 @@ module.exports = {
       '15': '.15',
       '3': '.3',
       '50': '.75',
+      '75': '.5'
     },
     extend: {
       dropShadow: {
-        'toxl': '0px 0px 20px rgb(0 0 0 / 0.1)',
+        'toxl': '0px 0px 20px rgb(0 0 0 / 0.09)',
         'n2xl': '0px 0px 20px rgb(0 0 0 / 0.15)'
       },
       blur: {

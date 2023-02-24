@@ -15,7 +15,7 @@ async function StatusLogin(){
     const Cookies = cookies();
     const UserToken = Cookies.get('UserToken');
     if(UserToken){
-        const decode = await promisify(jwt.verify)(DadosDoCliente.value, "OD2DS8S21DSA4SD4SS3A");
+        const decode = await promisify(jwt.verify)(UserToken.value, "OD2DS8S21DSA4SD4SS3A");
         return(
             <div>
                 <Link href="/perfil">

@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import LoadingPage from "../../../interface/components/Loading/loadingpage";
+var jwt = require('jsonwebtoken');
+const { promisify } = require('util');
 async function postCadastro(formCadastro){
     try{
         const caduser = await fetch('http://localhost:8080/api/userconfig/add-user', {
@@ -24,7 +26,6 @@ export default function BoxCadastrar(){
         msg: '',
         status: ''
     })
-
     const [verSenha, SetVerSenha] = useState(false)
     const onChangeInput = e => SetForm({...Form, [e.target.name]: e.target.value})
     const SendCadastro = async e => {
@@ -32,6 +33,7 @@ export default function BoxCadastrar(){
         SetResponse({status: 'loading'})
         if(Form.email && Form.nick && Form.senha){
             if(Form.senha.length >= 6){
+                //const decode = await jwt.sign({ foo: 'bar' }, 'shhhhh');
                 const responseEnv = await postCadastro(Form)
                 SetResponse({
                     status: responseEnv.status,
